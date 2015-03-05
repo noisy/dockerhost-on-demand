@@ -5,6 +5,7 @@
   Type:
 
     ssh root@localhost -p 20022
+    #password: docker
 
   Each time when you will login via ssh, you will start and login directly to fresh container of docker inside docker-on-demand container, which is capable of running next docker containers :)
   
