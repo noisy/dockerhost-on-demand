@@ -1,5 +1,8 @@
 # docker-on-demand
 
+[![nodesource/node](http://dockeri.co/image/noisy/docker-on-demand)](https://registry.hub.docker.com/u/noisy/docker-on-demand/)
+
+
     docker run -ti -p 20022:22 --privileged noisy/docker-on-demand
 
   Type:
