@@ -11,7 +11,10 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 RUN echo "docker pull jpetazzo/dind" >> /root/.zshrc
-RUN echo "exec docker run --privileged -t -i -e LOG=file jpetazzo/dind" >> /root/.bashrc
+
+RUN echo "CLIENTS=`docker ps|grep docker-on-demand|wc -l`"
+RUN echo "LINE=$((CLIENTS+1))"
+RUN echo "exec docker run --privileged -t -i -e LOG=file `python /get_ports.py |  sed $LINE"q;d"` jpetazzo/dind" >> /root/.bashrc
 ADD run.sh run.sh
 
 EXPOSE 22
