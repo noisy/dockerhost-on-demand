@@ -12,8 +12,8 @@ ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 RUN echo "docker pull jpetazzo/dind" >> /root/.zshrc
 
-RUN echo "CLIENTS=`docker ps|grep docker-on-demand|wc -l`"
-RUN echo "LINE=$((CLIENTS+1))"
+RUN echo "CLIENTS=`docker ps|grep docker-on-demand|wc -l`" >> /root/.bashrc
+RUN echo "LINE=$((CLIENTS+1))" >> /root/.bashrc
 RUN echo "exec docker run --privileged -t -i -e LOG=file `python /get_ports.py |  sed $LINE"q;d"` jpetazzo/dind" >> /root/.bashrc
 ADD run.sh run.sh
 
