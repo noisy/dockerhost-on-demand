@@ -1,3 +1,4 @@
+import os
 import urllib, json
 
 url = 'http://zonza-swarm:4243/containers/json'
@@ -15,13 +16,20 @@ for port_pair in sorted(dond['Ports'], key=lambda x:x['PrivatePort']):
         mapped_ports[port_pair['PrivatePort']] = port_pair['PublicPort']
 
 
-INNER_PORT_TMPL = '80{}{}'
-INNER_HOSTS = 3
-INNER_PORTS = [0, 1, 2]
+PORT_TMPL = '2{0:02d}{1:02d}'
+max_hosts = int(os.environ['MAX_HOSTS'])
+ports_per_host = int(os.environ['PORTS_PER_HOST'])
 
-for inner_host in range(1, INNER_HOSTS+1):
-    for inner_port in INNER_PORTS:
-        port = int(INNER_PORT_TMPL.format(inner_host, inner_port))
-        mapped = mapped_ports[port]
-        print '-p {}:{} '.format(port, port),
-    print ''
+result = ""
+
+for host_number in range(1, max_hosts+1):
+    for port_number in range(1, ports_per_host+1):
+        port = int(PORT_TMPL.format(host_number, port_number))
+        result +='-p {}:{} '.format(port, port)
+    
+    result += "-e FIRSTPORT={} -e LASTPORT={} \n".format(
+        PORT_TMPL.format(host_number, 1),
+        PORT_TMPL.format(host_number, ports_per_host)
+    )
+
+print result
