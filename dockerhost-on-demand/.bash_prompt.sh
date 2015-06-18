@@ -117,7 +117,7 @@ function set_bash_prompt () {
 
   # Set the bash prompt variable.
   PS1="
-${PYTHON_VIRTUALENV}${LIGHT_BLUE}\u@\h[ports:${PORTS}] ${YELLOW}\w${COLOR_NONE} ${BRANCH}
+${PYTHON_VIRTUALENV}${LIGHT_BLUE}\u@$HOST_URL ${YELLOW}\w${COLOR_NONE} ${BRANCH}
 ${PROMPT_SYMBOL} "
 }
 
