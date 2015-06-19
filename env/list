@@ -1,2 +1,2 @@
-MAX_HOSTS=12
-PORTS_PER_HOST=3
+export MAIN_URL=dhod.pl
+export VIRTUAL_HOST=*.$MAIN_URL
