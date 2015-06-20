@@ -1,9 +1,0 @@
-provider:
-  image: quay.io/noisy/dockerhost-on-demand-provider
-  ports:
-    - "80"
-    - "22:22"
-  volumes:
-    - env/:/env
-  privileged: true
-
