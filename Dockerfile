@@ -10,7 +10,7 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
-RUN echo "docker pull quay.io/noisy/dockerhost-on-demand:infomeet" >> /root/.zshrc
+RUN echo "docker pull quay.io/noisy/dockerhost-on-demand:infobackup" >> /root/.zshrc
 RUN echo "docker pull jwilder/nginx-proxy" >> /root/.zshrc
 RUN echo "docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock jwilder/nginx-proxy" >> /run_proxy.sh
 

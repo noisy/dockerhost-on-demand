@@ -1,5 +1,5 @@
 #!/bin/bash
-EXISTING_DOCKER_HOSTS=`docker ps|grep quay.io/noisy/dockerhost-on-demand:infomeet|wc -l`
+EXISTING_DOCKER_HOSTS=`docker ps|grep quay.io/noisy/dockerhost-on-demand:infobackup|wc -l`
 
 DOCKER_HOST_NO=$((EXISTING_DOCKER_HOSTS+1))
 

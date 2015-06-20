@@ -1,2 +1,2 @@
-MAIN_URL=dhod.pl
+MAIN_URL=backup.dhod.pl
 VIRTUAL_HOST=*.$MAIN_URL
