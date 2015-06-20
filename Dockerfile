@@ -1,6 +1,6 @@
 FROM jpetazzo/dind
 
-RUN apt-get update && apt-get install -y openssh-server zsh
+RUN apt-get update && apt-get install -y openssh-server zsh vim
 RUN mkdir /var/run/sshd
 RUN echo 'root:docker' | chpasswd
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -24,7 +24,6 @@ RUN chmod +x /get_options.sh
 RUN chmod +x /username_factory.sh
 
 RUN cat /tmp/.bashrc >> /root/.bashrc
-RUN apt-get install -y vim
 ADD run.sh run.sh
 
 EXPOSE 22
