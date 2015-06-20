@@ -6,7 +6,10 @@ apt-get update
 apt-get install -y oracle-java8-installer oracle-java8-set-default
 
 export JENKINS_HOME=/var/jenkins_home
+export JAVA_OPTS="-Xms128M -Xmx128M"
 useradd -d "$JENKINS_HOME" -u 1000 -m -s /bin/bash jenkins
 
 apt-get install -y curl
 curl -fL http://mirrors.jenkins-ci.org/war-stable/1.609.1/jenkins.war -o jenkins.war
+
+
