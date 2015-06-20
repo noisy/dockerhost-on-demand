@@ -1,2 +1,2 @@
-export MAIN_URL=dhod.pl
-export VIRTUAL_HOST=*.$MAIN_URL
+MAIN_URL=dhod.pl
+VIRTUAL_HOST=*.$MAIN_URL
