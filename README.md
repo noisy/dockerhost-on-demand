@@ -1,6 +1,8 @@
 # docker-on-demand
 
-[![Join the chat at https://gitter.im/noisy/dockerhost-on-demand](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/noisy/dockerhost-on-demand?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/noisy/dockerhost-on-demand](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/noisy/dockerhost-on-demand?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noisy/dockerhost-on-demand/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [![nodesource/node](http://dockeri.co/image/noisy/docker-on-demand)](https://registry.hub.docker.com/u/noisy/docker-on-demand/)
 
@@ -22,5 +24,5 @@
 No, this is... optimization. To be precize, bandwidth optimization in case when you are asking 30 people during docker workshops to pull some images :)
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noisy/dockerhost-on-demand/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
