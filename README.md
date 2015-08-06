@@ -20,3 +20,7 @@
 # This is madness!
 
 No, this is... optimization. To be precize, bandwidth optimization in case when you are asking 30 people during docker workshops to pull some images :)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noisy/dockerhost-on-demand/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
