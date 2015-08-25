@@ -1,0 +1,9 @@
+dhod:
+  build: .
+  privileged: true
+  hostname: dhod
+  environment:
+    PORT: 4444
+  ports:
+    - "4444"
+    - "2222:22"
