@@ -1,0 +1,15 @@
+dhod:
+  image: noisy/docker-on-demand:codepot
+  privileged: true
+  hostname: dhod
+  environment:
+    PORT: 4444
+    MAIN_DOMAIN: dhod.pl
+    VIRTUAL_HOST: "*.dhod.pl,dhod.pl"
+  ports:
+    - "80"
+    - "4444"
+    - "2222:22"
+  volumes:
+    - /data/dhod/:/var/lib/docker
+    - /data/dhod_registry/:/tmp/registry
