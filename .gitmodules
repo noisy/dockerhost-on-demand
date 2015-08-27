@@ -1,0 +1,3 @@
+[submodule "wetty"]
+	path = wetty
+	url = https://github.com/noisy/wetty.git
