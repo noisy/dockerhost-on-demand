@@ -4,6 +4,16 @@
 # What ports, IPs and protocols we listen for
 Port 22
 
+# Forces the execution of the command specified by ForceCommand, ignoring any
+# command supplied by the client and ~/.ssh/rc if present. The command is
+# invoked by using the user's login shell with the -c option.  This applies
+# to shell, command, or subsystem execution.  It is most useful inside a
+# Match block. The command originally supplied by the client is available in
+# the SSH_ORIGINAL_COMMAND environment variable. Specifying a command of
+# “internal-sftp” will force the use of an in-process sftp server that
+# requires no support files when used with ChrootDirectory.
+ForceCommand /post_login.sh
+
 # Use these options to restrict which interfaces/protocols sshd will bind to
 #ListenAddress ::
 #ListenAddress 0.0.0.0
@@ -48,7 +58,7 @@ HostbasedAuthentication no
 #IgnoreUserKnownHosts yes
 
 # To enable empty passwords, change to yes (NOT RECOMMENDED)
-PermitEmptyPasswords no
+PermitEmptyPasswords yes
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)

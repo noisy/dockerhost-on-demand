@@ -4,6 +4,11 @@ dhod:
   hostname: dhod
   environment:
     PORT: 4444
+    MAIN_DOMAIN: localhost
   ports:
+    - "80:80"
     - "4444"
     - "2222:22"
+  volumes:
+    - /data/dhod/:/var/lib/docker
+    - /data/dhod_registry/:/tmp/registry
