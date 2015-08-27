@@ -22,6 +22,11 @@ then
     docker rm nginx-proxy
 fi
 
+if [ $(docker ps -a | awk '{print $(NF)}' | grep "wetty" | wc -l) -eq 1 ]
+then
+    docker rm wetty
+fi
+
 #------------------------------------------------------------------------------
 docker run -d \
     -p 5000:5000 \
@@ -37,6 +42,13 @@ docker run -d \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
     --name nginx-proxy \
     jwilder/nginx-proxy
+
+docker run -d \
+    --name wetty \
+    -e VIRTUAL_HOST=$MAIN_DOMAIN \
+    -p 80 \
+    noisy/wetty \
+    app.js -p 80 --sshuser docker --sshhost 10.0.42.1
 
 docker pull quay.io/noisy/dockerhost-on-demand:infomeet
 #------------------------------------------------------------------------------
