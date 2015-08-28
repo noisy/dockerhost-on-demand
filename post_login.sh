@@ -2,6 +2,10 @@
 
 MAIN_DOMAIN="<MAIN_DOMAIN>"
 
+timestamp () {
+  date +"%Y-%m-%d_%H-%M-%S";
+};
+
 if [ "`whoami`" = "docker" ]; then
 
   hostname=""
@@ -31,7 +35,7 @@ if [ "`whoami`" = "docker" ]; then
        docker start $hostname
   fi
 
-  docker exec -ti $hostname bash
+  exec asciinema rec /asciinema/$hostname_`timestamp`.rec -w 3 -y -c 'docker exec -ti $hostname bash'
 
 else
   /bin/bash
