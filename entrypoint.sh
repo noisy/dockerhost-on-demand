@@ -50,7 +50,7 @@ docker run -d \
     noisy/wetty \
     app.js -p 80 --sshuser docker --sshhost 10.0.42.1
 
-docker pull quay.io/noisy/dockerhost-on-demand:infomeet
+docker pull noisy/dhod_node
 #------------------------------------------------------------------------------
 
 tail -f /var/log/docker.log

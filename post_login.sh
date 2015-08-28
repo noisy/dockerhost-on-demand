@@ -29,7 +29,7 @@ if [ "`whoami`" = "docker" ]; then
              -e VIRTUAL_HOST=$HOST_URL \
              -e HOST_URL=$HOST_URL \
              -e DOCKER_DAEMON_ARGS=--registry-mirror=http://registry:5000 \
-             -p 80 quay.io/noisy/dockerhost-on-demand:infomeet
+             -p 80 noisy/dhod_node
 
   elif [ $(docker ps -a -f status=exited | awk '{print $(NF)}' | grep -Fx "$hostname" | wc -l) -eq 1 ]; then
        docker start $hostname
